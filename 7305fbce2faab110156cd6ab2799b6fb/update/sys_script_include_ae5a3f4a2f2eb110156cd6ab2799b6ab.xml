@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1064616_instance.RestIntegration</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>RestIntegration</name>
+        <script><![CDATA[var RestIntegration = Class.create();
+RestIntegration.prototype = {
+    initialize: function() {},
+
+    createRecord: function(rec) {
+
+        gs.log('testing woeking', "Intergration incident insert");
+
+        try {
+            var r = new sn_ws.RESTMessageV2('x_1064616_instance.instance 2 App REST', 'create_record');
+            r.setStringParameterNoEscape('short_description', rec.short_description);
+            r.setStringParameterNoEscape('description', rec.description);
+
+            //override authentication profile 
+            //authentication type ='basic'/ 'oauth2'
+            //r.setAuthenticationProfile(authentication type, profile name);
+
+            //set a MID server name if one wants to run the message on MID
+            //r.setMIDServer('MY_MID_SERVER');
+
+            //if the message is configured to communicate through ECC queue, either
+            //by setting a MID server or calling executeAsync, one needs to set skip_sensor
+            //to true. Otherwise, one may get an intermittent error that the response body is null
+            //r.setEccParameter('skip_sensor', true);
+
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+
+            gs.log("RestIntegrationsponce Body Ouput--" + responseBody + "\n statude code" + httpStatus, "Intergration incident insert");
+
+
+
+        } catch (ex) {
+            var message = ex.message;
+        }
+    },
+
+    type: 'RestIntegration'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-18 14:16:02</sys_created_on>
+        <sys_id>ae5a3f4a2f2eb110156cd6ab2799b6ab</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>RestIntegration</sys_name>
+        <sys_package display_value="Instance 1 APP" source="x_1064616_instance">7305fbce2faab110156cd6ab2799b6fb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Instance 1 APP">7305fbce2faab110156cd6ab2799b6fb</sys_scope>
+        <sys_update_name>sys_script_include_ae5a3f4a2f2eb110156cd6ab2799b6ab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-18 14:32:54</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type>basic</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile display_value="INSTANCE 2 user">9bffc2792fe27110156cd6ab2799b695</basic_auth_profile>
+        <basic_auth_user/>
+        <description>instnace 2 APP CALLING</description>
+        <name>instance 2 App REST</name>
+        <oauth2_profile/>
+        <protocol_name/>
+        <rest_endpoint>https://dev120136.service-now.com/api/now/table/x_782420_instance_instance_2_main</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-18 13:59:54</sys_created_on>
+        <sys_id>937673062f2eb110156cd6ab2799b62e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>instance 2 App REST</sys_name>
+        <sys_package display_value="Instance 1 APP" source="x_1064616_instance">7305fbce2faab110156cd6ab2799b6fb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Instance 1 APP">7305fbce2faab110156cd6ab2799b6fb</sys_scope>
+        <sys_update_name>sys_rest_message_937673062f2eb110156cd6ab2799b62e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-18 13:59:54</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>
