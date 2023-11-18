@@ -31,31 +31,8 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
 
-    //new x_1064616_instance.RestIntegration.createRecord(current);
-    try { 
- var r = new sn_ws.RESTMessageV2('x_1064616_instance.instance 2 App REST', 'create_record');
- r.setStringParameterNoEscape('short_description', current.short_description);
- r.setStringParameterNoEscape('description', current.description);
-
-//override authentication profile 
-//authentication type ='basic'/ 'oauth2'
-//r.setAuthenticationProfile(authentication type, profile name);
-
-//set a MID server name if one wants to run the message on MID
-//r.setMIDServer('MY_MID_SERVER');
-
-//if the message is configured to communicate through ECC queue, either
-//by setting a MID server or calling executeAsync, one needs to set skip_sensor
-//to true. Otherwise, one may get an intermittent error that the response body is null
-//r.setEccParameter('skip_sensor', true);
-
- var response = r.execute();
- var responseBody = response.getBody();
- var httpStatus = response.getStatusCode();
-}
-catch(ex) {
- var message = ex.message;
-}
+    var SI=new x_1064616_instance.RestIntegration().createRecord(current);
+    
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -64,7 +41,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>48063b062f2eb110156cd6ab2799b6ee</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>record creation on insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="Instance 1 APP" source="x_1064616_instance">7305fbce2faab110156cd6ab2799b6fb</sys_package>
@@ -72,7 +49,7 @@ catch(ex) {
         <sys_scope display_value="Instance 1 APP">7305fbce2faab110156cd6ab2799b6fb</sys_scope>
         <sys_update_name>sys_script_48063b062f2eb110156cd6ab2799b6ee</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-18 14:58:27</sys_updated_on>
+        <sys_updated_on>2023-11-18 16:10:43</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
