@@ -12,11 +12,12 @@ RestIntegration.prototype = {
     initialize: function() {},
 
     createRecord: function(rec) {
-		gs.info('br working','Intergration custome')
+        gs.info('br working', 'Intergration custome')
         try {
             var r = new sn_ws.RESTMessageV2('x_1064616_instance.instance 2 App REST', 'create_record');
             r.setStringParameterNoEscape('short_description', rec.short_description);
             r.setStringParameterNoEscape('description', rec.description);
+			r.setStringParameterNoEscape('client_sys_id',rec.sys_id);
 
             //override authentication profile 
             //authentication type ='basic'/ 'oauth2'
@@ -35,10 +36,21 @@ RestIntegration.prototype = {
             var httpStatus = response.getStatusCode();
         } catch (ex) {
             var message = ex.message;
-			gs.info('message error',"Intergration custome");
+            gs.info('message error', "Intergration custome");
         }
-		
-		 gs.info("RestIntegrationsponce Body Ouput--" + responseBody + "\n statude code" + httpStatus, "Intergration custome");
+
+        gs.info("RestIntegrationsponce Body Ouput--" + responseBody + "\n statude code" + httpStatus, "Intergration custome");
+
+       var resObj = JSON.parse(responseBody); // String to JSON
+
+        var grIn = new GlideRecord("x_1064616_instance_instance_1");
+        grIn.addQuery("sys_id",rec.sys_id);
+        grIn.query();
+        if (grIn.next()) {
+            grIn.client_reference_id = resObj.result.sys_id;
+            grIn.update();
+        }
+
 
     },
 
@@ -48,13 +60,13 @@ RestIntegration.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-18 14:16:02</sys_created_on>
         <sys_id>ae5a3f4a2f2eb110156cd6ab2799b6ab</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>RestIntegration</sys_name>
         <sys_package display_value="Instance 1 APP" source="x_1064616_instance">7305fbce2faab110156cd6ab2799b6fb</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Instance 1 APP">7305fbce2faab110156cd6ab2799b6fb</sys_scope>
         <sys_update_name>sys_script_include_ae5a3f4a2f2eb110156cd6ab2799b6ab</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-18 16:08:05</sys_updated_on>
+        <sys_updated_on>2023-11-18 22:17:57</sys_updated_on>
     </sys_script_include>
 </record_update>

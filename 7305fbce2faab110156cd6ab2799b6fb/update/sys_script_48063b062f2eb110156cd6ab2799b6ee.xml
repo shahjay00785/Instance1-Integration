@@ -15,7 +15,8 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_1064616_instance_instance_1">u_assignment_group=0a52d3dcd7011200f2d224837e6103f2^EQ<item display_table="sys_user_group" display_value="Application Development" endquery="false" field="u_assignment_group" goto="false" newquery="false" operator="=" or="false" value="0a52d3dcd7011200f2d224837e6103f2"/>
+        <filter_condition table="x_1064616_instance_instance_1">u_assignment_group=0a52d3dcd7011200f2d224837e6103f2^client_reference_idISEMPTY^EQ<item display_table="sys_user_group" display_value="Application Development" endquery="false" field="u_assignment_group" goto="false" newquery="false" operator="=" or="false" value="0a52d3dcd7011200f2d224837e6103f2"/>
+            <item endquery="false" field="client_reference_id" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -41,7 +42,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>48063b062f2eb110156cd6ab2799b6ee</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>record creation on insert</sys_name>
         <sys_overrides/>
         <sys_package display_value="Instance 1 APP" source="x_1064616_instance">7305fbce2faab110156cd6ab2799b6fb</sys_package>
@@ -49,7 +50,7 @@
         <sys_scope display_value="Instance 1 APP">7305fbce2faab110156cd6ab2799b6fb</sys_scope>
         <sys_update_name>sys_script_48063b062f2eb110156cd6ab2799b6ee</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-18 16:10:43</sys_updated_on>
+        <sys_updated_on>2023-11-18 16:52:51</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
